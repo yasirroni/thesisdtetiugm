@@ -23,6 +23,9 @@
 *.synctex(busy)
 *.upa
 *.upb
+*.nav
+*.snm
+*.vrb
 
 # used package
 *.sty

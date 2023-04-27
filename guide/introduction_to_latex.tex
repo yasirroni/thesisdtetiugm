@@ -1,0 +1,113 @@
+\documentclass{beamer}
+
+\usepackage{hyperref}
+\usetheme{metropolis}
+
+\title{Guide for thesisdteti Class File}
+\subtitle{Introduction to LaTeX}
+
+\author{Muhammad Yasirroni}
+\institute{Universitas Gadjah Mada}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Introduction}
+\begin{frame}
+  \frametitle{What is LaTeX?}
+  \begin{itemize}
+    \item LaTeX is a document preparation system that allows users to create professional-looking documents with high-quality typography.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Why using LaTeX?}
+  \begin{itemize}
+    \item Plain text file
+    \item Separates content from formatting
+    \item Great support for mathematical equation and symbols
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Where to Learn?}
+  \begin{itemize}
+    \item Learn LaTeX in 30 minutes by Overleaf \href{https://www.overleaf.com/learn/latex/Learn\_LaTeX\_in\_30\_minutes}{here}.
+    \item Learn LaTeX by learnlatex.org \href{https://www.learnlatex.org/en/}{here}.
+  \end{itemize}
+\end{frame}
+
+\section{Getting Started}
+\begin{frame}[fragile]
+  \frametitle{Minimal Working Example}
+  Create a new project in Overleaf \href{https://www.overleaf.com/project}{here}, and type:
+
+  \begin{block}{}
+    \vspace{-2em}
+    \scriptsize
+    \begin{verbatim}
+          \documentclass{report}
+          \renewcommand{\thesection}{\arabic{section}}
+
+          \title{Minimal Working Example}
+          \author{Muhammad Yasirroni}
+          \date{\today}
+
+          \begin{document}
+          \maketitle
+
+          \section{Introduction}
+          \subsection{Background}
+          Hello world! This is a simple example!
+
+          \subsection{Conclusion}
+          See you!
+
+          \end{document}
+      \end{verbatim}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Document Structure}
+  \begin{itemize}
+    \item Creating sections and subsections.
+    \item Adding figures and tables.
+    \item Creating a bibliography.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Formatting}
+  \begin{itemize}
+    \item Different font styles and sizes.
+    \item Creating lists (ordered and unordered).
+    \item Adding footnotes and endnotes.
+    \item Creating mathematical equations and symbols.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Customization}
+  \begin{itemize}
+    \item Changing the document class and layout.
+    \item Using packages to add additional functionality.
+    \item Creating custom commands and environments.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Conclusion}
+  \begin{itemize}
+    \item Summary of the main points of the lecture.
+    \item Additional resources for learning LaTeX.
+    \item Encouragement to practice and experiment with LaTeX.
+  \end{itemize}
+\end{frame}
+
+\end{document}
