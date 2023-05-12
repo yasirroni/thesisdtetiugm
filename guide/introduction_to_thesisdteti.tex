@@ -99,6 +99,44 @@
 \begin{frame}[fragile]
   \frametitle{Codes}
 
+  \textbf{Using} \verb|\lstinputlisting|
+
+  \begin{block}{}
+    \vspace{-2em}
+    \small
+    \begin{verbatim}
+\lstinputlisting[%
+  language=Python,%
+  caption={CAPTION \textit{SUPPORT ITALIC}.},%
+  label={lst:FILE_NAME}]%
+  {codes/FILE_NAME.py}
+    \end{verbatim}
+  \end{block}
+
 \end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Equations}
+
+  \textbf{Using a Custom Function of} \verb|\inputeq|
+
+  \verb|\inputeq| is a custom command to import equation from separate file. The downside of this function is it uses multiple calls of open, read, and find to look for the equation, making the compilation slightly slower but almost negligible. Read \texttt{main/equations/equations.tex} for the detail of the syntax in creating your own texttt{equations.tex} file.
+
+  \textbf{Syntax for} \verb|\inputeq|
+
+  \begin{block}{}
+    \vspace{-2em}
+    \small
+    \begin{verbatim}
+\inputeq{equations/equations}{miqp-obj}
+    \end{verbatim}
+  \end{block}
+
+\end{frame}
+
+% TODO:
+% Create clean table
+% tabulary vs tabular
+% Setting in figures
 
 \end{document}

@@ -72,3 +72,13 @@ b_i &= 5x\\
 d &= \log x\\
 y &= \sin x
 \end{align*}
+
+\section{Memasukkan program yang panjang}
+
+Untuk memasukkan program yang panjang, kita menggunakan bantuan dari \verb|\lstinputlisting|. Karena \verb|\lstinputlisting| melakukan impor satu file secara utuh, sangat dianjurkan untuk menulis satu fungsi spesifik per file.
+
+\lstinputlisting[%
+	language=Python,%
+	caption={Potongan \textit{code} berbahasa Python.},%
+	label={lst:sample_code_py}]%
+	{codes/sample-code.py}
