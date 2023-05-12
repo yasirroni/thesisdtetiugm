@@ -3,8 +3,8 @@
 \usepackage{hyperref}
 \usetheme{metropolis}
 
-\title{Guide for thesisdteti Class File}
-\subtitle{Introduction to thesisdteti}
+\title{Guide for \texttt{thesisdteti} Class File}
+\subtitle{Introduction to LaTeX}
 
 \author{Muhammad Yasirroni}
 \institute{Universitas Gadjah Mada}
@@ -27,8 +27,78 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Where is thesisdteti?}
-  Download it from GitHub: https://github.com/yasirroni/thesisdtetiugm
+  \frametitle{Where is \texttt{thesisdteti}?}
+  \texttt{thesisdteti} is available at GitHub repository (\href{https://github.com/yasirroni/thesisdtetiugm}{here}). Altough it is more recommended to use Git to stay updated, a static \texttt{.zip} file is available (\href{https://github.com/yasirroni/thesisdtetiugm/archive/refs/heads/master.zip}{here}).
+\end{frame}
+
+\section{Document Class}
+
+\begin{frame}[fragile]
+  \frametitle{Document Class Options}
+
+  \textbf{Default Setting}
+
+  \begin{block}{}
+    \vspace{-2em}
+    \small
+    \begin{verbatim}
+\documentclass[master,bahasa,table,xcdraw]{thesisdtetiugm}
+    \end{verbatim}
+  \end{block}
+
+  \textbf{Setting Options}
+
+  \begin{itemize}
+    \item \texttt{<bachelor/master/doctoral>}: degree
+    \item \texttt{<bahasa/english>}: language
+    \item \texttt{<table>,<xcdraw>} (optional): supports coloring table
+  \end{itemize}
+
+\end{frame}
+
+\section{External Files}
+
+\begin{frame}[fragile]
+  \frametitle{\texttt{input} and \texttt{output}}
+
+  \verb|\input|
+
+  The \verb|\input{PATH/TO/FILENAME.tex}| inserts valid LaTeX code from the specified file.
+
+  \vspace{\baselineskip}
+
+  \verb|\include|
+
+  The \verb|\include{PATH/TO/FILENAME.tex}| inserts valid LaTeX code from the specified file by inserting on different page. \verb|\include| allows the use of \verb|\includeonly| to specify list of file that will be included upon rendering.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Figures}
+
+  \textbf{Using} \verb|\includegraphics|
+
+  \begin{block}{}
+    \vspace{-2em}
+    \small
+    \begin{verbatim}
+\includegraphics[width=10cm]{images/sample-fig.png}
+    \end{verbatim}
+  \end{block}
+
+  \textbf{Setting} \verb|\includegraphics|
+
+  \begin{itemize}
+    \item \verb|<width=WIDTHcm>| (optional): adjust the width of the image 
+    \item \verb|<FILE_NAME>.ext|: the extension supports various type such as \texttt{.png}, \texttt{.jpg}, and even \texttt{.pdf}. 
+  \end{itemize}
+
+  It is more recommended to not using both \texttt{<height>} and \texttt{<scale>} parameters. Stick with known \texttt{<width>} or page area for the images and let the document decides the height. Alternatively, not using any parameter is also possible to let LaTeX decides the resize.
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Codes}
+
 \end{frame}
 
 \end{document}
