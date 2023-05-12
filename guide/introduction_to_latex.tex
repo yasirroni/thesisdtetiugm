@@ -3,12 +3,14 @@
 \usepackage{hyperref}
 \usetheme{metropolis}
 
-\title{Guide for thesisdteti Class File}
+\title{Guide for \texttt{thesisdteti} Class File}
 \subtitle{Introduction to LaTeX}
 
 \author{Muhammad Yasirroni}
 \institute{Universitas Gadjah Mada}
 \date{\today}
+
+% NOTE: [fragile] required for \verb|...| and \begin{verbatim}
 
 \begin{document}
 
@@ -21,6 +23,7 @@
   \frametitle{What is LaTeX?}
   \begin{itemize}
     \item LaTeX is a document preparation system that allows users to create professional-looking documents with high-quality typography.
+    \item LaTeX document in \texttt{.tex} file can be rendered into portable \texttt{.pdf} file. This rendering process supports a formatter in the form of \texttt{.cls} document class and \texttt{.bst} bibliography style document.
   \end{itemize}
 \end{frame}
 
@@ -44,70 +47,188 @@
 \section{Getting Started}
 \begin{frame}[fragile]
   \frametitle{Minimal Working Example}
-  Create a new project in Overleaf \href{https://www.overleaf.com/project}{here}, and type:
+  Create a new project in Overleaf (\href{https://www.overleaf.com/project}{link}), and type:
 
   \begin{block}{}
     \vspace{-2em}
     \scriptsize
     \begin{verbatim}
-          \documentclass{report}
-          \renewcommand{\thesection}{\arabic{section}}
+      \documentclass{report}
 
-          \title{Minimal Working Example}
-          \author{Muhammad Yasirroni}
-          \date{\today}
-
-          \begin{document}
-          \maketitle
-
-          \section{Introduction}
-          \subsection{Background}
-          Hello world! This is a simple example!
-
-          \subsection{Conclusion}
-          See you!
-
-          \end{document}
+      \title{Minimal Working Example}
+      \author{Muhammad Yasirroni}
+      
+      \begin{document}
+      \maketitle
+      
+      \chapter{Introduction}
+      \section{Background}
+      \subsection{Related Works}
+      Hello world! This is a simple example!
+      
+      \subsection{Conclusion}
+      See you!
+      
+      \end{document}
       \end{verbatim}
   \end{block}
-
 \end{frame}
 
-\begin{frame}
-  \frametitle{Document Structure}
+\begin{frame}[fragile]
+\frametitle{Using thesisdtetiugm.cls}
+\begin{block}{}
+  \vspace{-2em}
+  \scriptsize
+  \begin{verbatim}
+    % change documentclass to use thesisdtetiugm.cls
+    \documentclass[master,bahasa,table,xcdraw]{thesisdtetiugm}
+
+    \title{Minimal Working Example}
+    \author{Muhammad Yasirroni}{<<NIM>>}  % add NIM
+    
+    % minimal data for cover
+    \program{<<Program name>>}{<<Program coordinator>>}{<<NIP>>}
+    \major{<<Major>>}
+    \yearsubmit{<<year submit>>}
+    
+    \begin{document}
+    \printcover{images/logougm.png}{Tesis}  % replacing \maketitle
+    
+    \chapter{Introduction}
+    \section{Background}
+    \subsection{Related Works}
+    Hello world! This is a simple example!
+    
+    \subsection{Conclusion}
+    See you!
+    
+    \end{document}
+    \end{verbatim}
+\end{block}
+\end{frame}
+
+\section{Style Using Document Class}
+\begin{frame}[fragile]
+  \frametitle{Document Class}
+
+  Template or a blueprint for your document. It determines the overall layout, formatting, and structure of your document. To use it, use \verb|\documentclass{}| syntax. Some built-in document class example are:
+
   \begin{itemize}
-    \item Creating sections and subsections.
-    \item Adding figures and tables.
-    \item Creating a bibliography.
+    \item article: short documents, such as papers or reports
+    \item report: longer documents, such as theses or technical reports
+    \item book: for writing books with two kinds of pages and various book supports 
+    \item beamer: presentation files with slides
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Formatting}
+  \frametitle{Custom Document Class}
+
+  Publisher often provide their own document class in \texttt{.cls} file format. Some custom document class are:
+
   \begin{itemize}
-    \item Different font styles and sizes.
-    \item Creating lists (ordered and unordered).
-    \item Adding footnotes and endnotes.
-    \item Creating mathematical equations and symbols.
+    \item thesisdtetiugm: UGM thesis style for various degrees
+    \item IEEEtran: IEEE Transaction style
+    \item ieeeaccess: IEEE Access style
+    \item elsarticle: Elsevier style
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Customization}
-  \begin{itemize}
-    \item Changing the document class and layout.
-    \item Using packages to add additional functionality.
-    \item Creating custom commands and environments.
-  \end{itemize}
+\section{Benefit of Using LaTeX}
+\begin{frame}[fragile]
+  \frametitle{Benefit of Using LaTeX \#1}
+
+  \textbf{Mixing Style}
+  
+  Even when you use \texttt{.cls} styler document, you still can add your own style inside your \texttt{.tex} file. Both \texttt{.cls} and \texttt{.tex} use same syntax and (in most cases) you can think of \verb|\documentclass{}| as "load all the text in \texttt{.cls} to the \texttt{.tex} file."
+
+  To create a new command, use \verb|\newcommand| and use \verb|\renewcommand| to redefine existing command that is already define previously, including in \texttt{.cls} styler document.
+
 \end{frame}
 
 \begin{frame}
-  \frametitle{Conclusion}
+  \frametitle{Benefit of Using LaTeX \#2}
+
+  \textbf{Code}
+  
+  Whenever you update your code, your output \texttt{.pdf} file will also get updated upon rendering. Thus you can take advantage of it by:
+
   \begin{itemize}
-    \item Summary of the main points of the lecture.
-    \item Additional resources for learning LaTeX.
-    \item Encouragement to practice and experiment with LaTeX.
+    \item Place your simulation code under \texttt{codes/} folder.
+    \item Output the graph of your simulation directly to \texttt{images/} folder in \texttt{.png} or \texttt{.pdf} file.
   \end{itemize}
+
 \end{frame}
+
+\begin{frame}
+  \frametitle{Benefit of Using LaTeX \#3}
+
+  \textbf{Tables and Figures}
+  
+  Tables and figures are automatically numbered and placed on the right place. Very useful for journal publication where it require every tables and figures to be placed after mentioned.
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Benefit of Using LaTeX \#4}
+
+  \textbf{References}
+
+  One file to store references in \texttt{.bib} file that can be written manually or imported from various references manages such as Mendeley, Zotero, and Semantic Scholar.
+
+  The citation style can be easily formatted using \texttt{.bst} file, make it easy to change style if your paper got rejected.
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Benefit of Using LaTeX \#5}
+
+  \textbf{Plain Text}
+
+  \texttt{.tex} file is a plain file that can take advantages of:
+
+  \begin{itemize}
+    \item Place your simulation code under \texttt{codes/} folder.
+    \item Output the graph of your simulation directly to \texttt{images/} folder in \texttt{.png} or \texttt{.pdf} file.
+  \end{itemize}
+
+\end{frame}
+
+% \begin{frame}
+%   \frametitle{Document Structure}
+%   \begin{itemize}
+%     \item Creating sections and subsections.
+%     \item Adding figures and tables.
+%     \item Creating a bibliography.
+%   \end{itemize}
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Formatting}
+%   \begin{itemize}
+%     \item Different font styles and sizes.
+%     \item Creating lists (ordered and unordered).
+%     \item Adding footnotes and endnotes.
+%     \item Creating mathematical equations and symbols.
+%   \end{itemize}
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Customization}
+%   \begin{itemize}
+%     \item Changing the document class and layout.
+%     \item Using packages to add additional functionality.
+%     \item Creating custom commands and environments.
+%   \end{itemize}
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Conclusion}
+%   \begin{itemize}
+%     \item Summary of the main points of the lecture.
+%     \item Additional resources for learning LaTeX.
+%     \item Encouragement to practice and experiment with LaTeX.
+%   \end{itemize}
+% \end{frame}
 
 \end{document}
