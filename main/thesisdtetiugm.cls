@@ -73,6 +73,7 @@
 \usepackage[cmex10]{amsmath}
 \usepackage{cite}
 \usepackage{multirow}
+\usepackage{booktabs}
 \usepackage{titlesec}
 \usepackage{ragged2e} % text alignment
 \usepackage{algorithm}

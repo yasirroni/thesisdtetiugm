@@ -1,6 +1,10 @@
 \documentclass{beamer}
 
 \usepackage{hyperref}
+\usepackage{tabulary}
+\usepackage{multirow}
+\usepackage{booktabs}
+
 \usetheme{metropolis}
 
 \title{Guide for \texttt{thesisdteti} Class File}
@@ -134,11 +138,95 @@
 
 \end{frame}
 
+\section{Tables}
+\begin{frame}
+  \frametitle{Default Table}
+
+  \begin{table}[h]
+    \centering
+    \caption{Tabel Tinggi Berat}
+    \begin{tabular}{|l|r|r|r|r}
+      \hline
+      ID & \multicolumn{2}{c}{Laki-laki} & \multicolumn{2}{c}{Perempuan} \\
+      \hline
+       & Tinggi Badan (cm) & Berat Badan (kg) & Tinggi Badan (cm) & Berat Badan (kg) \\
+      \hline
+      A23   & 173 & 62  & 173 & 62 \\ \hline
+      A25   & 185 & 70  & 185 & 70 \\ \hline
+      A10   & 162 & 78  & 162 & 78 \\ \hline
+      Total & 520 & 210 & 520 & 210 \\ \hline
+    \end{tabular}
+    \label{tab:tinggiberat}
+  \end{table}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Clean Table}
+
+  \begin{table}[h]
+    \centering
+    \caption{Tabel Tinggi Berat 2}
+    \vspace{-1em}  % adjust caption and table space
+    \begin{tabulary}{\textwidth}{lRRRR}  % no vertical line if not needed
+      \toprule
+      & \multicolumn{2}{c}{Laki-laki} & \multicolumn{2}{c}{Perempuan} \\
+      \cline{2-5}
+      \multirow{-2}{*}{ID} & Tinggi Badan (cm) & Berat Badan (kg) & Tinggi Badan (cm) & Berat Badan (kg)\\
+      \hline
+      A23 & 173           & 62          & 173           & 62          \\
+      A25 & \textbf{185}  & 70          & \textbf{185}  & 70          \\
+      A10 & 162           & \textbf{78} & 162           & \textbf{78} \\
+      \cline{2-5}
+      Total & 520 & 210 & 520 & 210 \\ \bottomrule
+    \end{tabulary}
+    \label{tab:tinggiberat2}
+  \end{table}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{\texttt{tabular} vs \texttt{tabulary}}
+
+  \texttt{tabular}
+
+  Default table.
+
+  \vspace{\baselineskip}
+
+  \texttt{tabulary}
+
+  Use package \texttt{tabulary}, support auto warp text using capital letter for column (LRC). The width of the table can be maximized using \texttt{\textwidth}. 
+
+\end{frame}
+
+\section{Numbering}
+\begin{frame}[fragile]
+  \frametitle{\texttt{itemize} vs \texttt{enumerate}}
+
+  \texttt{itemize}
+
+  Bullets. Use \verb|\begin{itemize}| ... \verb|\end{itemize}|.
+
+  \begin{itemize}
+    \item
+    \item 
+  \end{itemize}
+
+  \vspace{\baselineskip}
+
+  \texttt{enumerate}
+
+  Numbers. Use \verb|\begin{enumerate}| ... \verb|\end{enumerate}|.
+
+  \begin{enumerate}
+    \item
+    \item 
+  \end{enumerate}
+
+\end{frame}
+
 % TODO:
-% Create clean table
-% tabulary vs tabular
 % Setting in figures
-% enumerate vs itemize
 % equation, allign, and inline math
 % \cite workflow using mendeley: web>download bib>update key name (optional)>download pdf (optional)>import bib to manager>link pdf to mendeley (optional)>export multiple file into a single .bib > use \cite{KEY} (NOTE: since .bib is a plain text, you can just edit it manually anyway (such as adding new source))
 
