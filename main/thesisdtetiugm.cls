@@ -22,7 +22,7 @@
 %% Identification
 %======================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{thesisdtetiugm}[2018/02/08]
+\ProvidesClass{thesisdtetiugm}[2023/05/13 v0.1.2]
 
 %======================================
 %% Initial Code
