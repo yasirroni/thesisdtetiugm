@@ -14,6 +14,8 @@
 1. VSCode: <https://code.visualstudio.com/download>
 1. TeXstudio: <https://www.texstudio.org/>
 1. CodeCogs: <https://editor.codecogs.com/>
+1. Mendeley:
+1. Semantic Scholar:
 
 ## Rendering the guide
 
