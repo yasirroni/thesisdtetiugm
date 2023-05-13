@@ -1,8 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%  Filename: thesisdtetiugm.cls
 %%%  Class File for Master Thesis at DTETI UGM
-%%%  Version: 0.1.1
-%%%  Latest update: 2023-02-22
+%%%  Version: 0.1.2
+%%%  Latest update: 2023-05-13
 %%%  ---
 %%%  Maintained by Muhammad Yasirroni
 %%%  [muhammadyasirroni@mail.ugm.ac.id]
