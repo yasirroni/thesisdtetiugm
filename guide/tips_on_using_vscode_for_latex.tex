@@ -1,0 +1,57 @@
+\documentclass{beamer}
+
+\usepackage{hyperref}
+\usetheme{metropolis}
+
+\title{Guide for \texttt{thesisdteti} Class File}
+\subtitle{Tips on using VSCode for LaTeX}
+
+\author{Muhammad Yasirroni}
+\institute{Universitas Gadjah Mada}
+\date{\today}
+
+% NOTE: [fragile] required for \verb|...| and \begin{verbatim}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% \section{Shortscut}
+\begin{frame}[fragile]
+  \frametitle{Shortscut}
+
+  You can read all settings of keyboard shortcut using \texttt{ctrl+shift+p > Preferences: Open Default Keyboard Shortcuts (JSON)}. Some helpful shortcuts also can be found (\href{https://gist.github.com/bradtraversy/b28a0a361880141af928ada800a671d9}{here})
+  \begin{itemize}
+    \item \texttt{alt + z}: toggle word warp for long text
+    \item \texttt{ctrl + b}: toggle sidebar
+    \item \verb|ctrl + \|: split editor
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Extensions}
+
+    \textbf{Writing LaTeX}
+    \begin{itemize}
+      \item Code Spell Checker
+      \item Grammarly
+      \item LaTeX Workshop
+    \end{itemize}
+
+    \textbf{Version Control}
+    \begin{itemize}
+        \item Git Graph
+        \item GitLens
+    \end{itemize}
+
+    \textbf{Others}
+    \begin{itemize}
+        \item indent-rainbow
+        \item Better Comments
+    \end{itemize}
+
+\end{frame}
+
+\end{document}

@@ -2,8 +2,8 @@
 
 ## Learning material
 
-1. Learn LaTeX in 30 minutes by Overleaf: [link](https://www.overleaf.com/learn)
-1. Visual Studio Code documentation: [link](https://code.visualstudio.com/docs)
+1. Learn LaTeX in 30 minutes by Overleaf: <https://www.overleaf.com/learn>
+1. Visual Studio Code documentation: <https://code.visualstudio.com/docs>
 
 ## Useful links
 
@@ -14,8 +14,8 @@
 1. VSCode: <https://code.visualstudio.com/download>
 1. TeXstudio: <https://www.texstudio.org/>
 1. CodeCogs: <https://editor.codecogs.com/>
-1. Mendeley:
-1. Semantic Scholar:
+1. Mendeley: <https://www.mendeley.com/download-reference-manager/>
+1. Semantic Scholar: <https://www.semanticscholar.org/>
 
 ## Rendering the guide
 
