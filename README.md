@@ -52,7 +52,7 @@ To compile PDF using a command-line, you can use the below steps:
 
         ```shell
         pdflatex.exe --synctex=1 --interaction=batchmode "thesis_template.tex"
-        bibtex "thesis_template"
+        bibtex "thesis_template.aux"
         pdflatex.exe --synctex=1 --interaction=batchmode "thesis_template.tex"
         pdflatex.exe --synctex=1 --interaction=batchmode "thesis_template.tex"
         ```
@@ -68,14 +68,14 @@ To compile PDF using a command-line, you can use the below steps:
 
         ```shell
         pdflatex.exe --synctex=1 --interaction=batchmode "summary_id.tex"
-        bibtex "summary_id"
+        bibtex "summary_id.aux"
         pdflatex.exe --synctex=1 --interaction=batchmode "summary_id.tex"
         pdflatex.exe --synctex=1 --interaction=batchmode "summary_id.tex"
         ```
 
         ```shell
         pdflatex.exe --synctex=1 --interaction=batchmode "summary_en.tex"
-        bibtex "summary_en"
+        bibtex "summary_en.aux"
         pdflatex.exe --synctex=1 --interaction=batchmode "summary_en.tex"
         pdflatex.exe --synctex=1 --interaction=batchmode "summary_en.tex"
         ```

@@ -8,7 +8,7 @@
 \usetheme{metropolis}
 
 \title{Guide for \texttt{thesisdteti} Class File}
-\subtitle{Introduction to LaTeX}
+\subtitle{Introduction to \texttt{thesisdteti}}
 
 \author{Muhammad Yasirroni}
 \institute{Universitas Gadjah Mada}
@@ -124,7 +124,7 @@
 
   \textbf{Using a Custom Function of} \verb|\inputeq|
 
-  \verb|\inputeq| is a custom command to import equation from separate file. The downside of this function is it uses multiple calls of open, read, and find to look for the equation, making the compilation slightly slower but almost negligible. Read \texttt{main/equations/equations.tex} for the detail of the syntax in creating your own texttt{equations.tex} file.
+  \verb|\inputeq| is a custom command to import equation from separate file. The downside of this function is it uses multiple calls of open, read, and find to look for the equation, making the compilation slightly slower but almost negligible. Read \texttt{main/equations/equations.tex} for the detail of the syntax in creating your own \texttt{equations.tex} file.
 
   \textbf{Syntax for} \verb|\inputeq|
 
@@ -145,7 +145,7 @@
   \begin{table}[h]
     \centering
     \caption{Tabel Tinggi Berat}
-    \begin{tabular}{|l|r|r|r|r}
+    \begin{tabular}{|c|c|c|c|c}
       \hline
       ID & \multicolumn{2}{c}{Laki-laki} & \multicolumn{2}{c}{Perempuan} \\
       \hline
@@ -163,10 +163,12 @@
 \begin{frame}
   \frametitle{Clean Table}
 
+  Can be seen in Table \ref{tab:tinggiberat2}.
+
   \begin{table}[h]
     \centering
     \caption{Tabel Tinggi Berat 2}
-    \vspace{-1em}  % adjust caption and table space
+    \vspace{-2em}  % adjust caption and table space
     \begin{tabulary}{\textwidth}{lRRRR}  % no vertical line if not needed
       \toprule
       & \multicolumn{2}{c}{Laki-laki} & \multicolumn{2}{c}{Perempuan} \\
@@ -177,15 +179,16 @@
       A25 & \textbf{185}  & 70          & \textbf{185}  & 70          \\
       A10 & 162           & \textbf{78} & 162           & \textbf{78} \\
       \cline{2-5}
-      Total & 520 & 210 & 520 & 210 \\ \bottomrule
+      Total & 520 & 210 & 520 & 210 \\
+      \bottomrule
     \end{tabulary}
     \label{tab:tinggiberat2}
   \end{table}
 
 \end{frame}
 
-\begin{frame}
-  \frametitle{\texttt{tabular} vs \texttt{tabulary}}
+\begin{frame}[fragile]
+  \frametitle{\texttt{tabular} vs \texttt{longtable} vs \texttt{tabulary}}
 
   \texttt{tabular}
 
@@ -193,9 +196,13 @@
 
   \vspace{\baselineskip}
 
+  \texttt{longtable}
+
+  \texttt{tabular} with multiple pages support such as iterating column header or not, and tabulary is best for tables with text-heavy content and automatic column width adjustment. 
+
   \texttt{tabulary}
 
-  Use package \texttt{tabulary}, support auto warp text using capital letter for column (LRC). The width of the table can be maximized using \texttt{\textwidth}. 
+  Use package \texttt{tabulary}, support auto warp text using capital letter for column (LRC). The width of the table can be maximized using \verb|\textwidth|. 
 
 \end{frame}
 

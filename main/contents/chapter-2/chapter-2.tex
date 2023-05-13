@@ -4,52 +4,76 @@
 
 Untuk membuat algoritma terpisah seperti pada contoh berikut, kita dapat memanfaatkan perintah \textit{algstore} dan \textit{algrestore} yang terdapat pada paket \textit{algcompatible}. Pada dasarnya, kita membuat dua blok algoritma dimana blok pertama kita simpan menggunakan \textit{algstore} dan kemudian di-restore menggunakan \textit{algrestore} pada algoritma kedua. Perintah tersebut dimaksudkan agar terdapat kesinamungan antara kedua blok yang sejatinya adalah satu blok. 
 
-\begin{algorithm}                     
-	\caption{Contoh algorima}          
-	\label{findme}                          
-	\begin{algorithmic} [1]                   
-		\Procedure{CreateSet}{$v$}
-		\State Create new set containing $v$
-		\EndProcedure
-		\algstore{myalg}
-	\end{algorithmic}
+\begin{algorithm}
+    \caption{Contoh algorima}
+    \label{findme}
+    \begin{algorithmic} [1]
+        \Procedure{CreateSet}{$v$}
+        \State Create new set containing $v$
+        \EndProcedure
+        \algstore{myalg}
+    \end{algorithmic}
 \end{algorithm}
 
 Pada blok algoritma kedua, tidak perlu ditambahkan caption dan label, karena sudah menjadi satu bagian dalam blok pertama. Pembagian algoritma menjadi dua bagian ini berguna jika kita ingin menjelaskan bagian-bagian dari sebuah algoritma, maupun untuk memisah algoritma panjang dalam beberapa halaman.
 
-\begin{algorithm}                     
-	\begin{algorithmic} [1]                   
-		\algrestore{myalg}
-		\Procedure{ConcatSet}{$v$}
-		\State Create new set containing $v$
-		\EndProcedure
-	\end{algorithmic}
+\begin{algorithm} 
+    \begin{algorithmic} [1]
+        \algrestore{myalg}
+        \Procedure{ConcatSet}{$v$}
+        \State Create new set containing $v$
+        \EndProcedure
+    \end{algorithmic}
 \end{algorithm}
 
-
+\newpage  % used to simulate change page, delete this for usage
 \section{Membuat tabel terpisah}
 
 Untuk membuat tabel panjang yang melebihi satu halaman, kita dapat mengganti kombinasi \textit{table + tabular} menjadi \textit{longtable} dengan contoh sebagai berikut.
 
 \begin{longtable}{| c | c |} 
-	\caption{Contoh tabel panjang}
-	\label{tab:myfirstlongtable} \\
-	\hline
-	header 1 & header 2 \\
-	\hline \hline
-	foo & bar \\ \hline 
-	foo & bar \\ \hline
-	foo & bar \\ \hline
-	foo & bar \\ \hline
-	foo & bar \\ \hline
-	foo & bar \\ \hline
-	foo & bar \\ \hline
-	foo & bar \\ \hline
-	foo & bar \\ \hline
-	foo & bar \\ \hline
-	foo & bar \\ \hline
+    \caption{Contoh tabel panjang}
+    \label{tab:myfirstlongtable} \\
+    \hline
+    header 1 & header 2 \\
+    \hline \hline
+    foo & bar \\ \hline 
+    foo & bar \\ \hline
+    foo & bar \\ \hline
+    foo & bar \\ \hline
+    foo & bar \\ \hline
+    \newpage  % used to simulate change page, delete this for usage
+    foo & bar \\ \hline
+    foo & bar \\ \hline
+    foo & bar \\ \hline
+    foo & bar \\ \hline
+    foo & bar \\ \hline
+    foo & bar \\ \hline
 \end{longtable}
 
+\begin{longtable}{ccc}
+    \caption{My clean table with continue message}
+    \label{tab:cleanlongtable} \\
+    \hline
+    Column 1 & Column 2 & Column 3\\\hline
+    \endfirsthead
+    \multicolumn{3}{@{}l}{\ldots continued}\\\hline
+    Column 1 & Column 2 & Column 3\\\hline
+    \endhead % all the lines above this will be repeated on every page
+    \hline
+    \multicolumn{3}{r@{}}{continued \ldots}\\
+    \endfoot
+    \hline
+    \endlastfoot
+    A & B & C\\     A & B & C\\
+    A & B & C\\     A & B & C\\
+    A & B & C\\     A & B & C\\
+    \newpage  % used to simulate change page, delete this for usage
+    A & B & C\\     A & B & C\\
+    A & B & C\\     A & B & C\\
+    A & B & C\\     A & B & C\\
+    A & B & C\\     A & B & C\\
+\end{longtable}
 
 \section{Menulis formula terpisah halaman}
 
@@ -78,7 +102,7 @@ y &= \sin x
 Untuk memasukkan program yang panjang, kita menggunakan bantuan dari \verb|\lstinputlisting|. Karena \verb|\lstinputlisting| melakukan impor satu file secara utuh, sangat dianjurkan untuk menulis satu fungsi spesifik per file.
 
 \lstinputlisting[%
-	language=Python,%
-	caption={Potongan \textit{code} berbahasa Python.},%
-	label={lst:sample_code_py}]%
-	{codes/sample-code.py}
+    language=Python,%
+    caption={Potongan \textit{code} berbahasa Python.},%
+    label={lst:sample_code_py}]%
+    {codes/sample-code.py}
