@@ -8,12 +8,9 @@
 %%%  [canggihpw@gmail.com]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% Use option "bahasa" or "english" 
-%%    to change the basic language used
-%% User option "bachelor", "master", or "doctoral"
-%% 	  to change the degree
+%% Use option "bahasa" or "english" to change the basic language used
+%% User option "bachelor", "master", or "doctoral" to change the degree
 
-%% TODO: \usepackage graphicx for relative path shortcut
 %\documentclass[<bachelor/master/doctoral>,<bahasa/english>]{thesisdtetiugm} 
 \documentclass[master,bahasa,table,xcdraw]{thesisdtetiugm} % <table> and <xcdraw> for coloring table
 
@@ -57,6 +54,7 @@
 \addsupervisor{<<Supervisor 1>>}{<<NIP>>}
 \addsupervisor{<<Supervisor 2>>}{<<NIP>>}
 \addsupervisor{<<Supervisor 3>>}{<<NIP>>}
+
 % Name of examiners
 \addexaminer{<<Examiner 1>>}{<<NIP 1>>}
 \addexaminer{<<Examiner 2>>}{<<NIP 2>>}
@@ -82,75 +80,70 @@
 
 \begin{document}
 %======================================
-% Create cover etc
-%======================================
-
-%---- PROOF OF SUBMISSIONS ---- 
-% \includepdf[pages=-]{private/BUKTI_PENDAFTARAN_PENDADARAN.pdf}
+% Create cover up to before main contents (see help below)
+% 
+% Uncomment or comment as needed
 
 %---- COVER ---- 
 % Choose one between Pendadaran/Tesis/Ringkasan Tesis*
-% I don't know why, but using Pra Pendadaran also possible
-\printcover{images/logougm.png}{Pendadaran/Tesis/Ringkasan Tesis*}
+%   I don't know why, but using Pra Pendadaran also possible
 
 %---- ENDORSEMENT PAGE ----
-\cleardoublepage \phantomsection
 % Select endorsement page type. If you want to use your own PDF file,
-% 	use \printendorsementpdf, or if you want to use JPG file, use
-% 	\printendorsementjpg. Otherwise, use \printendorsement.
-% 	Choose one only. Comment out unused command(s).
-
-\printendorsement
-% \printendorsementpdf{contents/endorsement/endorsement.pdf}
-% \printendorsementjpg{images/scanned-endorsement.jpg}
+%   use \printendorsementpdf, or if you want to use JPG file, use
+%   \printendorsementjpg. Otherwise, use \printendorsement.
+%   Choose one only. Comment out unused command(s).
 
 %---- DEDICATION PAGE ---- 
 % In master degree format, there is no dedication page.
 
-% \chapterdedication{contents/dedication/dedication}
-
 %---- STATEMENT PAGE ----
-\cleardoublepage \phantomsection
 % Select statement page type. If you want to use your own PDF file, use
 %   \chapterstatementpdf{<your *.pdf file path>}, or if you want to use JPG
 %   file, use \chapterstatementjpg{<your *.jpg file path>}.  Otherwise, use
 %   \chapterstatement{contents/statement/statement}. Choose one only. Comment
 %   out unused command(s).
 
-\chapterstatement{contents/statement/statement}
-% \chapterstatementpdf{images/scanned-statement.pdf}
-% \chapterstatementjpg{images/scanned-statement.jpg}
-
 %---- PREFACE PAGE ----
-\cleardoublepage \phantomsection
 % Select preface page type. If you want to use your own PDF file,
 %   use \chapterprefacepdf{<your *.pdf file path>}, or if you want to use JPG
 %   file, use \chapterprefacejpg{<your *.jpg file path>}. Otherwise, use
 %   \chapterpreface{contents/preface/preface}. Choose one only. Comment out
 %   unused command(s).
 
+%======================================
+% TODO: move \cleardoublepage \phantomsection to .cls file
+
+% \includepdf[pages=-]{private/BUKTI_PENDAFTARAN_PENDADARAN.pdf}
+
+\printcover{images/logougm.png}{Pendadaran/Tesis/Ringkasan Tesis*}
+
+\cleardoublepage \phantomsection
+\printendorsement
+% \printendorsementpdf{contents/endorsement/endorsement.pdf}
+% \printendorsementjpg{images/scanned-endorsement.jpg}
+
+% \chapterdedication{contents/dedication/dedication}
+
+\cleardoublepage \phantomsection
+\chapterstatement{contents/statement/statement}
+% \chapterstatementpdf{images/scanned-statement.pdf}
+% \chapterstatementjpg{images/scanned-statement.jpg}
+
+\cleardoublepage \phantomsection
 \chapterpreface{contents/preface/preface}
 % \chapterprefacepdf{images/scanned-preface.pdf}
 % \chapterprefacejpg{images/scanned-preface.jpg}
 
-%---- NOMENCLATURE PAGE ----
 \cleardoublepage \phantomsection
 \chapternomenclature{contents/nomenclature/nomenclature}
 
-%---- ABSTRACT PAGE----
 \cleardoublepage \phantomsection
 \chapterabstract{contents/abstract/abstract}
 
-%---- INTISARI PAGE----
 \cleardoublepage \phantomsection
 \chapterintisari{contents/abstract/intisari}
-%======================================
 
-
-%======================================
-% Create Table of Contents, List of Figures, List of Tables
-% <Do not change this part>
-%======================================
 \cleardoublepage \phantomsection
 \thetoc
 \tableofcontents
@@ -160,13 +153,11 @@
 \cleardoublepage \phantomsection
 \thelot
 \listoftables
-%======================================
 
 %======================================
 %  MAIN TEXT
 %======================================
 \startmain
-% You can change the filename and location of the files inputted.
 \cleardoublepage \phantomsection
 \include{contents/chapter-1/chapter-1}
 \cleardoublepage \phantomsection

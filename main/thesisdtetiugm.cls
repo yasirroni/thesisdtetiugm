@@ -33,6 +33,8 @@
 \RequirePackage{setspace}
 \RequirePackage{times}% font
 \RequirePackage[T1]{fontenc}% quotation
+
+%% TODO: \usepackage graphicx for relative path shortcut, add examples
 \RequirePackage{graphicx}
 \RequirePackage{calc}% Simple arithmetic lib
 \RequirePackage{pdfpages}% include pdf file in latex
