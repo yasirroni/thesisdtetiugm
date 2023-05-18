@@ -75,6 +75,53 @@ Untuk membuat tabel panjang yang melebihi satu halaman, kita dapat mengganti kom
     A & B & C\\     A & B & C\\
 \end{longtable}
 
+% NOTE: kelemahan dari penggunaan longtable adalah ketidakmampuannya untuk dikombinasikan dengan \begin{table}[t] maupun \begin{table}[h], di mana penggunaan \begin{table}[t] atau \begin{table}[h] akan menghilangkan kemampuan longtable itu sendiri untuk dapat berada pada dua halaman. 
+    
+Kombinasi dari \verb|\tabulary| yang mendukung \textit{auto-wrap} dengan \verb|\longtable| yang mendukung tabel antar halaman adalah fungsi yang disediakan \texttt{thesisdtetiugm} yaitu \verb|\ltabulary|.
+
+\begin{ltabulary}{LLL}
+    % firsthead start for header of table on first appearance
+    \toprule
+    Column 1 & Column 2 & Column 3 with very very very very very very very long column name\\\midrule
+    \endfirsthead
+    % newpage head, just copy paste after continued message
+    \multicolumn{3}{@{}l}{\ldots continued}\\\toprule  % continued message, change the number with number of columns
+    Column 1 & Column 2 & Column 3 with very very very very very very very long column name\\\midrule
+    \endhead % all the lines between \endfirsthead and \endhead will be used on the next page
+    % every foot use continued from \endhead to \endfoot
+    \bottomrule
+    \multicolumn{3}{r@{}}{continued \ldots}\\
+    \endfoot
+    % every foot will only use \bottomrule from \endfoot to \endlastfoot
+    \bottomrule
+    \endlastfoot
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+    x&y&z\\
+\end{ltabulary}
+
 \section{Menulis formula terpisah halaman}
 
 Terkadang kita butuh untuk menuliskan rangkaian formula dalam jumlah besar sehingga melewati batas satu halaman. Solusi yang digunakan bisa saja dengan memindahkan satu blok formula tersebut pada halaman yang baru atau memisah rangkaian formula menjadi dua bagian untuk masing-masing halaman. Cara yang pertama mungkin akan menghasilkan alur yang berbeda karena ruang kosong pada halaman pertama akan diisi oleh teks selanjutnya. Sehingga di sini kita dapat memanfaatkan \textit{align} yang sudah diatur dengan mode \textit{allowdisplaybreaks}. Penggunakan \textit{align} ini memungkinkan satu rangkaian formula terpisah berbeda halaman. 

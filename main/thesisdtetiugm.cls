@@ -916,6 +916,28 @@
 % Give padding in tabular environment
 \renewcommand{\arraystretch}{1.2}
 
+
+% Longtabulary (combination of longtable and tabulary)
+\def\ltabulary{%
+\def\endfirsthead{\\}%
+\def\endhead{\\}%
+\def\endfoot{\\}%
+\def\endlastfoot{\\}%
+\def\tabulary{%
+  \def\TY@final{%
+\def\endfirsthead{\LT@end@hd@ft\LT@firsthead}%
+\def\endhead{\LT@end@hd@ft\LT@head}%
+\def\endfoot{\LT@end@hd@ft\LT@foot}%
+\def\endlastfoot{\LT@end@hd@ft\LT@lastfoot}%
+\longtable}%
+  \let\endTY@final\endlongtable
+  \TY@tabular}%
+\dimen@\columnwidth
+\advance\dimen@-\LTleft
+\advance\dimen@-\LTright
+\tabulary\dimen@}
+
+\def\endltabulary{\endtabulary}
 %======================================
 %% Misc Styling
 %======================================
