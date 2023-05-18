@@ -477,6 +477,7 @@
 %% Endorsement Page
 %======================================
 \newcommand{\printendorsementpdf}[1]{
+	\cleardoublepage \phantomsection
 	%\chapter*{\approvalpage}
 	\fancyhf{}
 	\fancyfoot[C]{\thepage}
@@ -493,6 +494,7 @@
 % If Bachelor
 \iftoggle{bachelor}{
 	\newcommand{\printendorsement}{
+		\cleardoublepage \phantomsection
 		\chapter*{\approvalpage}
 		\fancyhf{}
 		\fancyfoot[C]{\thepage}
@@ -542,6 +544,7 @@
 % If Master
 \iftoggle{master}{
 	\newcommand{\printendorsement}{
+		\cleardoublepage \phantomsection
 	%	\chapter*{\endorsementname}%
 		\fancyhf{}
 		\fancyfoot[C]{\thepage}
@@ -648,6 +651,7 @@
 % If Doctoral
 \iftoggle{doctoral}{
 	\newcommand{\printendorsement}{
+		\cleardoublepage \phantomsection
 		\chapter*{\approvalpage}
 		\fancyhf{}
 		\fancyfoot[C]{\thepage}
@@ -732,6 +736,7 @@
 %======================================
 \newcommand{\printendorsementjpg}[1]{
 	% \newpage
+	\cleardoublepage \phantomsection
 	\newgeometry{right=0cm,left=0cm,top=0cm,bottom=0cm}
 	\fancyhf{}
 	\begin{center}
@@ -750,6 +755,7 @@
 %% Dedication Page
 %======================================
 \newcommand{\chapterdedication}[1]{
+	\cleardoublepage \phantomsection
 	\newgeometry{right=3cm,left=3cm,top=3cm,bottom=3cm}
 	\chapter*{\dedicationpage}%
 	\input{#1}
@@ -760,6 +766,7 @@
 %% Statement Page
 %======================================
 \newcommand{\chapterstatement}[1]{
+	\cleardoublepage \phantomsection
 	\newgeometry{right=3cm,left=3cm,top=3cm,bottom=3cm}
 	\chapter*{\statementname}%
 	\input{#1}
@@ -768,9 +775,10 @@
 }
 
 %======================================
-%% Scanned PDF Preface Page
+%% Scanned PDF Statement Page
 %======================================
 \newcommand{\chapterstatementpdf}[1]{
+		\cleardoublepage \phantomsection
 		\fancyhf{}
 		\fancyfoot[C]{\thepage}
 		\addcontentsline{toc}{chapter}{\statementname}
@@ -781,6 +789,7 @@
 %% Scanned JPG Statement Page
 %======================================
 \newcommand{\chapterstatementjpg}[1]{
+	\cleardoublepage \phantomsection
 	% \newpage
 	\newgeometry{right=0cm,left=0cm,top=0cm,bottom=0cm}
 	\fancyhf{}
@@ -800,6 +809,7 @@
 %% Preface
 %======================================
 \newcommand{\chapterpreface}[1]{
+	\cleardoublepage \phantomsection
 	\chapter*{\prefacename}%
 	\input{#1}
 	\addcontentsline{toc}{chapter}{\prefacename}
@@ -809,6 +819,7 @@
 %% Scanned PDF Preface Page
 %======================================
 \newcommand{\chapterprefacepdf}[1]{
+		\cleardoublepage \phantomsection
 		\fancyhf{}
 		\fancyfoot[C]{\thepage}
 		\addcontentsline{toc}{chapter}{\prefacename}
@@ -819,6 +830,7 @@
 %% Scanned JPG Preface Page
 %======================================
 \newcommand{\chapterprefacejpg}[1]{
+	\cleardoublepage \phantomsection
 	% \newpage
 	\newgeometry{right=0cm,left=0cm,top=0cm,bottom=0cm}
 	\fancyhf{}
@@ -838,6 +850,7 @@
 %% Nomenclature
 %======================================
 \newcommand{\chapternomenclature}[1]{
+	\cleardoublepage \phantomsection
 	\chapter*{\nomenclaturename} % use this if not using nomencl, comment to use nomencl (!WIP)
 	\input{#1}
 	\addcontentsline{toc}{chapter}{\nomenclaturename}
@@ -847,6 +860,7 @@
 %% Abstract
 %======================================
 \newcommand{\chapterabstract}[1]{
+	\cleardoublepage \phantomsection
 	\chapter*{ABSTRACT}
 	\input{#1}
 	\addcontentsline{toc}{chapter}{ABSTRACT}
@@ -856,6 +870,7 @@
 %% Intisari
 %======================================
 \newcommand{\chapterintisari}[1]{
+	\cleardoublepage \phantomsection
 	\chapter*{INTISARI}
 	\input{#1}
 	\addcontentsline{toc}{chapter}{INTISARI}	
@@ -889,16 +904,19 @@
 
 % Adding entry to TOC
 \newcommand{\thetoc}{
+	\cleardoublepage \phantomsection
 	\newpage
 	\addcontentsline{toc}{chapter}{\contentsname}
 }
 % Adding entry to LOT
 \newcommand{\thelot}{
+	\cleardoublepage \phantomsection
 	\newpage
 	\addcontentsline{toc}{chapter}{\listtablename}
 }
 % Adding entry to LOF
 \newcommand{\thelof}{
+	\cleardoublepage \phantomsection
 	\newpage
 	\addcontentsline{toc}{chapter}{\listfigurename}
 }
@@ -1057,6 +1075,7 @@
 
 % References
 \newcommand{\thereferences}{
+	\cleardoublepage \phantomsection
 	\addcontentsline{toc}{chapter}{\bibname}
 	\singlespacing
 	\nopagebreak

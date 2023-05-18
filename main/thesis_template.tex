@@ -111,6 +111,9 @@
 %   \chapterpreface{contents/preface/preface}. Choose one only. Comment out
 %   unused command(s).
 
+% NOTE: If you create new chapter and found out that there is no bookmark for your new
+%   chapter, use '\cleardoublepage \phantomsection'
+
 %======================================
 % TODO: move \cleardoublepage \phantomsection to .cls file
 
@@ -118,41 +121,26 @@
 
 \printcover{images/logougm.png}{Pendadaran/Tesis/Ringkasan Tesis*}
 
-\cleardoublepage \phantomsection
 \printendorsement
 % \printendorsementpdf{contents/endorsement/endorsement.pdf}
 % \printendorsementjpg{images/scanned-endorsement.jpg}
 
 % \chapterdedication{contents/dedication/dedication}
 
-\cleardoublepage \phantomsection
-\chapterstatement{contents/statement/statement}
 % \chapterstatementpdf{images/scanned-statement.pdf}
 % \chapterstatementjpg{images/scanned-statement.jpg}
 
-\cleardoublepage \phantomsection
 \chapterpreface{contents/preface/preface}
 % \chapterprefacepdf{images/scanned-preface.pdf}
 % \chapterprefacejpg{images/scanned-preface.jpg}
 
-\cleardoublepage \phantomsection
 \chapternomenclature{contents/nomenclature/nomenclature}
-
-\cleardoublepage \phantomsection
 \chapterabstract{contents/abstract/abstract}
-
-\cleardoublepage \phantomsection
 \chapterintisari{contents/abstract/intisari}
 
-\cleardoublepage \phantomsection
-\thetoc
-\tableofcontents
-\cleardoublepage \phantomsection
-\thelof
-\listoffigures
-\cleardoublepage \phantomsection
-\thelot
-\listoftables
+\thetoc \tableofcontents
+\thelof \listoffigures
+\thelot \listoftables
 
 %======================================
 %  MAIN TEXT
@@ -173,7 +161,6 @@
 %======================================
 %  References
 %======================================
-\cleardoublepage \phantomsection
 \thereferences
 \bibliographystyle{bibtex/IEEEtran}
 \bibliography{bibtex/references}
