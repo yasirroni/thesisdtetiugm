@@ -735,7 +735,6 @@
 %% Scanned JPG Endorsement Page
 %======================================
 \newcommand{\printendorsementjpg}[1]{
-	% \newpage
 	\cleardoublepage \phantomsection
 	\newgeometry{right=0cm,left=0cm,top=0cm,bottom=0cm}
 	\fancyhf{}
@@ -790,7 +789,6 @@
 %======================================
 \newcommand{\chapterstatementjpg}[1]{
 	\cleardoublepage \phantomsection
-	% \newpage
 	\newgeometry{right=0cm,left=0cm,top=0cm,bottom=0cm}
 	\fancyhf{}
 	\begin{center}
@@ -831,7 +829,6 @@
 %======================================
 \newcommand{\chapterprefacejpg}[1]{
 	\cleardoublepage \phantomsection
-	% \newpage
 	\newgeometry{right=0cm,left=0cm,top=0cm,bottom=0cm}
 	\fancyhf{}
 	\begin{center}
@@ -901,33 +898,27 @@
 	\addtolength\cftfignumwidth{\widthof{\bfseries \figurename }}
 }
 
-
-% Adding entry to TOC
-\newcommand{\thetoc}{
-	\cleardoublepage \phantomsection
-	\newpage
-	\addcontentsline{toc}{chapter}{\contentsname}
-}
-% Adding entry to LOT
-\newcommand{\thelot}{
-	\cleardoublepage \phantomsection
-	\newpage
-	\addcontentsline{toc}{chapter}{\listtablename}
-}
-% Adding entry to LOF
-\newcommand{\thelof}{
-	\cleardoublepage \phantomsection
-	\newpage
-	\addcontentsline{toc}{chapter}{\listfigurename}
-}
 % Put title of TOC, LOF, and LOT in top-center page
 \AtBeginDocument{
-	\renewcommand{\cfttoctitlefont}{\vspace{-2.5cm}\hfill\bfseries\fontsize{14pt}{16pt}\selectfont}
-	\renewcommand{\cftaftertoctitle}{\hfill}
-	\renewcommand{\cftlottitlefont}{\vspace{-2.5cm}\hfill\bfseries\fontsize{14pt}{16pt}\selectfont}
-	\renewcommand{\cftafterlottitle}{\hfill}
-	\renewcommand{\cftloftitlefont}{\vspace{-2.5cm}\hfill\bfseries\fontsize{14pt}{16pt}\selectfont}
-	\renewcommand{\cftafterloftitle}{\hfill}
+	% \renewcommand{\cfttoctitlefont}{\chapter*{\contentsname}\normalfont}
+	% \renewcommand{\cftaftertoctitle}{\hfill}
+	% \renewcommand{\cftlottitlefont}{\chapter*{\listtablename}\normalfont}
+	% \renewcommand{\cftafterlottitle}{\hfill}
+	% \renewcommand{\cftloftitlefont}{\chapter*{\listfigurename}\normalfont}
+	% \renewcommand{\cftafterloftitle}{\hfill}
+
+	\renewcommand\tableofcontents{%
+		\cleardoublepage \phantomsection%
+		\addcontentsline{toc}{chapter}{\contentsname}%
+		\chapter*{\contentsname}\@starttoc{toc}}
+	\renewcommand\listoffigures{%
+		\cleardoublepage \phantomsection%
+		\addcontentsline{toc}{chapter}{\listfigurename}%
+		\chapter*{\listfigurename}\@starttoc{lof}}
+	\renewcommand\listoftables{%
+		\cleardoublepage \phantomsection%
+		\addcontentsline{toc}{chapter}{\listtablename}%
+		\chapter*{\listtablename}\@starttoc{lot}}
 }
 
 %======================================
