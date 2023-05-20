@@ -7,8 +7,8 @@
 
 \usetheme{metropolis}
 
-\title{Guide for \texttt{thesisdteti} Class File}
-\subtitle{Introduction to \texttt{thesisdteti}}
+\title{Guide for \texttt{thesisdtetiugm} Class File}
+\subtitle{Introduction to \texttt{thesisdtetiugm}}
 
 \author{Muhammad Yasirroni}
 \institute{Universitas Gadjah Mada}
@@ -31,8 +31,8 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Where is \texttt{thesisdteti}?}
-  \texttt{thesisdteti} is available at GitHub repository (\href{https://github.com/yasirroni/thesisdtetiugm}{here}). Altough it is more recommended to use Git to stay updated, a static \texttt{.zip} file is available (\href{https://github.com/yasirroni/thesisdtetiugm/archive/refs/heads/master.zip}{here}).
+  \frametitle{Where is \texttt{thesisdtetiugm}?}
+  \texttt{thesisdtetiugm} is available at GitHub repository (\href{https://github.com/yasirroni/thesisdtetiugm}{here}). Altough it is more recommended to use Git to stay updated, a static \texttt{.zip} file is available (\href{https://github.com/yasirroni/thesisdtetiugm/archive/refs/heads/master.zip}{here}).
 \end{frame}
 
 \section{Document Class}
@@ -160,7 +160,7 @@
   \end{table}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Clean Table}
 
   Can be seen in Table \ref{tab:tinggiberat2}.
@@ -172,13 +172,13 @@
     \begin{tabulary}{\textwidth}{lRRRR}  % no vertical line if not needed
       \toprule
       & \multicolumn{2}{c}{Laki-laki} & \multicolumn{2}{c}{Perempuan} \\
-      \cline{2-5}
+      \cmidrule{2-5}
       \multirow{-2}{*}{ID} & Tinggi Badan (cm) & Berat Badan (kg) & Tinggi Badan (cm) & Berat Badan (kg)\\
-      \hline
+      \midrule
       A23 & 173           & 62          & 173           & 62          \\
       A25 & \textbf{185}  & 70          & \textbf{185}  & 70          \\
       A10 & 162           & \textbf{78} & 162           & \textbf{78} \\
-      \cline{2-5}
+      \cmidrule{2-5}
       Total & 520 & 210 & 520 & 210 \\
       \bottomrule
     \end{tabulary}
@@ -188,21 +188,26 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{\texttt{tabular} vs \texttt{longtable} vs \texttt{tabulary}}
+  \frametitle{Table Cotrol and Commands}
+  \begin{itemize}
+    \item \verb|\begin{table}[LOCATION]| to create a table environment that support auto placement based on \verb|[LOCATION]|. The \verb|[LOCATION]| can be selected from \texttt{[h]}, \texttt{[b]}, and \texttt{[t]} for here, bottom of page, and top of page, or combination of that (such as \texttt{[bt]}).
+    \item Use \verb|\hline| to make horizontal line and \verb|\cline{START-STOP}| to make horizontal line from column \texttt{START} to \texttt{STOP}. Alternatively, use \verb|\toprule| for top line, \verb|\midrule| for lines between rows, \verb|\cmidrule| for partial lines between rows, and \verb|\bottomrule| for bottom line.
+    \item To control allign, use \texttt{l}, \texttt{r}, or \texttt{c} to make it allign left, right, or center. Alternatively, use the capital \texttt{L}, \texttt{R}, or \texttt{C} to also support auto wrap under \texttt{tabulary}.
+    \item Use \verb|\multicolumn{NCOLUMNS}{ALLIGN}| to merge columns or rows repectively
+  \end{itemize}
+\end{frame}
 
-  \texttt{tabular}
+\begin{frame}[fragile]
+  \frametitle{\texttt{tabular} vs \texttt{longtable} vs \texttt{tabulary} vs \texttt{ltabulary}}
 
-  Default table.
+  \begin{itemize}
+    \item  \texttt{tabular}: Default table.
+    \item \texttt{longtable}: \texttt{tabular} with multiple pages support for table with many rows and ability to iterating column header for multi pages table. The downside is that it can't be controlled with auto placement such as \texttt{[b]} and \texttt{[t]}.
+    \item \texttt{tabulary}: \texttt{tabular} with support for auto warp text using capital letter for column (LRC). The width of the table can be maximized using \verb|\textwidth| with automatic column width adjustment based on centent width. 
+    \item \texttt{ltabulary}: Custom package that combines \texttt{longtable} and \texttt{tabulary}, that is support of multiple pages and auto wrap.
+  \end{itemize}
 
-  \vspace{\baselineskip}
-
-  \texttt{longtable}
-
-  \texttt{tabular} with multiple pages support such as iterating column header or not, and tabulary is best for tables with text-heavy content and automatic column width adjustment. 
-
-  \texttt{tabulary}
-
-  Use package \texttt{tabulary}, support auto warp text using capital letter for column (LRC). The width of the table can be maximized using \verb|\textwidth|. 
+  % NOTE: You can also explore other alternative such as https://ctan.org/pkg/tabularray and 
 
 \end{frame}
 
