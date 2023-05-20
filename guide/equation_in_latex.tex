@@ -36,9 +36,9 @@
 
     \item \texttt{equation} environment: The \texttt{equation} environment is used for displaying standalone, single equation. It automatically numbers the equations and places them in the center of the line.
 
-    \item \texttt{align} environment: The \texttt{align} environment is used to typeset multiline equations with alignment. It provides multiple alignment points using ampersands (\verb|&|).
+    \item \texttt{align} environment: The \texttt{align} environment is used to typeset multiline equations alignment at ampersands (\verb|&|).
 
-    \item \texttt{align*} environment: The \texttt{align*} environment is similar to the \texttt{align} environment but does not automatically number the equations. It is useful when you don't want equation numbers.
+    \item \texttt{align*} environment: The \texttt{align*} environment is \texttt{align} environment but does not automatically number the equations.
 
   \end{itemize}
 \end{frame}
@@ -51,7 +51,7 @@
 \begin{frame}[fragile]
   \frametitle{\texttt{equation} Environment}
 
-  In (\ref{eq:eq1}) called using \verb|\ref{eq:eq1}|
+  (\ref{eq:eq1}) called using \verb|\ref{eq:eq1}|.
 
   \begin{verbatim}
 \begin{equation}
@@ -69,16 +69,15 @@
 \begin{frame}[fragile]
   \frametitle{\texttt{align} Environment}
 
-  Just like \texttt{equation} but support multiple equation and allign at \verb|&|.
+  (\ref{eq:eq2}\textendash\ref{eq:eq4}) called using \verb|(\ref{eq:eq2}\textendash\ref{eq:eq4})|.
+
   \begin{verbatim}
 \begin{align}
-  x &= 2x + 3 \\
-  x - 2x &= 3 \\
-  x &= 1
+  x &= 2x + 3 \label{eq:eq2} \\
+  x - 2x &= 3 \label{eq:eq3} \\
+  x &= 1 \label{eq:eq4}
 \end{align}
     \end{verbatim}
-
-  In (\ref{eq:eq2}\textendash\ref{eq:eq4})
 
   \begin{align}
     x &= 2x + 3 \label{eq:eq2} \\
