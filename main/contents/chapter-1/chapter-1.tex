@@ -7,6 +7,8 @@ Contoh penggunaan sitasi \cite{lukito2016,santosa2011user} \cite{lukito2016,sant
 
 \section{Penulisan Gambar}
 
+Contoh gambar terlihat pada Gambar \ref{Fig: Contoh gambar}. Gambar diambil dari \cite{wibowo2016clustering}.
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=10cm]{images/sample-fig.png}
@@ -14,7 +16,20 @@ Contoh penggunaan sitasi \cite{lukito2016,santosa2011user} \cite{lukito2016,sant
     \label{Fig: Contoh gambar}
 \end{figure}
 
-Contoh gambar terlihat pada Gambar \ref{Fig: Contoh gambar}. Gambar diambil dari \cite{wibowo2016clustering}.
+Contoh gambar terlihat pada Gambar \ref{fig:fig2}, \ref{fig:fig2a}, \ref{fig:fig2b}. Gambar diambil dari \cite{wibowo2016clustering}.
+
+\begin{figure}[h]
+    \centering
+    \subfloat[]{
+            \includegraphics[width=0.25\textwidth]{../main/images/sample-fig.png}  % .. means go up folder
+            \label{fig:fig2a}}
+        \hspace*{-1.2em}  % this is for giving horizontal space for fig 1 and fig 2.
+    \subfloat[]{
+            \includegraphics[width=0.25\textwidth]{../main/images/sample-fig.png}  % .. means go up folder
+            \label{fig:fig2b}}
+    \caption{(a) Figure 1 example and (b) Figure 2 example.}
+    \label{fig:fig2}
+\end{figure}
 
 \section{Penulisan Tabel}
 \begin{table}[h]

@@ -51,13 +51,17 @@
 \begin{frame}[fragile]
   \frametitle{\texttt{equation} Environment}
 
+  In (\ref{eq:eq1}) called using \verb|\ref{eq:eq1}|
+
   \begin{verbatim}
 \begin{equation}
+  \label{eq:eq1}
     x = 2x + 3
 \end{equation}
   \end{verbatim}
 
   \begin{equation}
+    \label{eq:eq1}
       x = 2x + 3
   \end{equation}
 \end{frame}
@@ -74,10 +78,12 @@
 \end{align}
     \end{verbatim}
 
+  In (\ref{eq:eq2}\textendash\ref{eq:eq4})
+
   \begin{align}
-    x &= 2x + 3 \\
-    x - 2x &= 3 \\
-    x &= 1
+    x &= 2x + 3 \label{eq:eq2} \\
+    x - 2x &= 3 \label{eq:eq3} \\
+    x &= 1 \label{eq:eq4}
   \end{align}
 \end{frame}
 
@@ -97,7 +103,7 @@
     x &= 2x + 3 \\
     x - 2x &= 3 \\
     x &= 1
-  \end{align}
+  \end{align*}
 \end{frame}
 
 \begin{frame}[fragile]

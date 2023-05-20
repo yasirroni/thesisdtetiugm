@@ -24,4 +24,5 @@ pdflatex.exe --synctex=1 --interaction=batchmode "introduction_to_latex.tex"
 pdflatex.exe --synctex=1 --interaction=batchmode "introduction_to_thesisdteti.tex"
 pdflatex.exe --synctex=1 --interaction=batchmode "tips_on_using_vscode_for_latex.tex"
 pdflatex.exe --synctex=1 --interaction=batchmode "equation_in_latex.tex"
+pdflatex.exe --synctex=1 --interaction=batchmode "figures_in_latex.tex"
 ```
