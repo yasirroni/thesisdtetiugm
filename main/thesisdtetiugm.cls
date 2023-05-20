@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%  Filename: thesisdtetiugm.cls
 %%%  Class File for Master Thesis at DTETI UGM
-%%%  Version: 0.1.2
+%%%  Version: 0.2.0
 %%%  Latest update: 2023-05-13
 %%%  ---
 %%%  Maintained by Muhammad Yasirroni
@@ -22,7 +22,7 @@
 %% Identification
 %======================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{thesisdtetiugm}[2023/05/13 v0.1.2]
+\ProvidesClass{thesisdtetiugm}[2023/05/20 v0.2.0]
 
 %======================================
 %% Initial Code
