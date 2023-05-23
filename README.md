@@ -31,19 +31,19 @@ To compile PDF using a command-line, you can use the below steps:
     For common compile:
 
     ```shell
-    pdflatex.exe --synctex=1 --interaction=batchmode "thesis_template.tex"
+    pdflatex.exe --synctex=1 --interaction=batchmode "main.tex"
     ```
 
     To include printing error:
 
     ```shell
-    pdflatex.exe --synctex=1 --interaction=batchmode -file-line-error "thesis_template.tex"
+    pdflatex.exe --synctex=1 --interaction=batchmode -file-line-error "main.tex"
     ```
 
     or
 
     ```shell
-    pdflatex.exe --synctex=1 --interaction=nonstopmode "thesis_template.tex"
+    pdflatex.exe --synctex=1 --interaction=nonstopmode "main.tex"
     ```
 
     Some packages require multiple runs such as:
@@ -51,33 +51,33 @@ To compile PDF using a command-line, you can use the below steps:
     1. Updating `bib` and creating or using a new `\label`` require multiple compilations:
 
         ```shell
-        pdflatex.exe --synctex=1 --interaction=batchmode "thesis_template.tex"
-        bibtex "thesis_template.aux"
-        pdflatex.exe --synctex=1 --interaction=batchmode "thesis_template.tex"
-        pdflatex.exe --synctex=1 --interaction=batchmode "thesis_template.tex"
+        pdflatex.exe --synctex=1 --interaction=batchmode "main.tex"
+        bibtex "main.aux"
+        pdflatex.exe --synctex=1 --interaction=batchmode "main.tex"
+        pdflatex.exe --synctex=1 --interaction=batchmode "main.tex"
         ```
 
     1. Using highlights (`\hly, \hlg, and \hlr`) require two times compilation:
 
         ```shell
-        pdflatex.exe --synctex=1 --interaction=batchmode "thesis_template.tex"
-        pdflatex.exe --synctex=1 --interaction=batchmode "thesis_template.tex"
+        pdflatex.exe --synctex=1 --interaction=batchmode "main.tex"
+        pdflatex.exe --synctex=1 --interaction=batchmode "main.tex"
         ```
 
-    1. You can use the below commands to compile `summary_en` and `summary_id`:
+    1. You can use the below commands to compile `main_summary_en` and `main_summary_id`:
 
         ```shell
-        pdflatex.exe --synctex=1 --interaction=batchmode "summary_id.tex"
-        bibtex "summary_id.aux"
-        pdflatex.exe --synctex=1 --interaction=batchmode "summary_id.tex"
-        pdflatex.exe --synctex=1 --interaction=batchmode "summary_id.tex"
+        pdflatex.exe --synctex=1 --interaction=batchmode "main_summary_id.tex"
+        bibtex "main_summary_id.aux"
+        pdflatex.exe --synctex=1 --interaction=batchmode "main_summary_id.tex"
+        pdflatex.exe --synctex=1 --interaction=batchmode "main_summary_id.tex"
         ```
 
         ```shell
-        pdflatex.exe --synctex=1 --interaction=batchmode "summary_en.tex"
-        bibtex "summary_en.aux"
-        pdflatex.exe --synctex=1 --interaction=batchmode "summary_en.tex"
-        pdflatex.exe --synctex=1 --interaction=batchmode "summary_en.tex"
+        pdflatex.exe --synctex=1 --interaction=batchmode "main_summary_en.tex"
+        bibtex "main_summary_en.aux"
+        pdflatex.exe --synctex=1 --interaction=batchmode "main_summary_en.tex"
+        pdflatex.exe --synctex=1 --interaction=batchmode "main_summary_en.tex"
         ```
 
         > **Note**
@@ -86,9 +86,9 @@ To compile PDF using a command-line, you can use the below steps:
 
 ## How-to-use
 
-1. Read the detailed information in `thesis_template.tex`.
+1. Read the detailed information in `main.tex`.
 
-1. In case some `.sty` (packages) files are not available in your TeX installation, just copy the required one from the `packages/` directory into `main/` (side by side with `thesis_template.tex`). Hopefully, this will help beginner users.
+1. In case some `.sty` (packages) files are not available in your TeX installation, just copy the required one from the `packages/` directory into `main/` (side by side with `main.tex`). Hopefully, this will help beginner users.
 
 1. In case the following `pgfplots` compatibility error occurs,
 
@@ -114,7 +114,7 @@ To compile PDF using a command-line, you can use the below steps:
 
 ```plaintext
 |-- thesisdtetiugm.cls (Class file)
-|-- thesis_template.tex (The template file)
+|-- main.tex (The template file)
 ```
 
 ### Content directory
