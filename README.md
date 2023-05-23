@@ -6,9 +6,7 @@ This template can be used for a bachelor, master, and doctoral thesis at DTETI U
 
 ## What's new
 
-[2020-02-12] Delegated as semi-formal master thesis template. Major upgrades including (1) better support for bookmarks and highlight, (2) migrating master thesis format page margin to `left=3.5cm` and `2.5cm` for others, and (3) support multi-row table.
-
-[2020-01-28] You can use command `\printendorsementpdf` to include your pdf file containing the endorsement. Otherwise, use `\printendorsement`
+See [CHANGELOG](CHANGELOG.md)
 
 ## Compiling PDF
 

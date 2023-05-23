@@ -2,7 +2,7 @@
 %%%  Filename: thesisdtetiugm.cls
 %%%  Class File for Master Thesis at DTETI UGM
 %%%  Version: 0.2.0
-%%%  Latest update: 2023-05-13
+%%%  Latest update: 2023-05-20
 %%%  ---
 %%%  Maintained by Muhammad Yasirroni
 %%%  [muhammadyasirroni@mail.ugm.ac.id]
@@ -527,13 +527,13 @@
 				\iftoggle{lang}{Pada tanggal $\ldots\ldots$}{on $\ldots\ldots$}\\
 				\vfill
 				\begin{center}
-					\begin{tabular}{ccc}
+					\begin{tabulary}{\linewidth}{CcC}
 						\iftoggle{lang}{Pembimbing I}{Supervisor I} &\hspace{2cm} & \iftoggle{lang}{Pembimbing II}{Supervisor II} \\
 						\vspace{0.3cm} & \vspace{0.3cm} & \vspace{0.3cm}\\
-						\textbf{\underline{\getsupervisor{1}{1}}}& &
-						\textbf{\underline{\getsupervisor{2}{1}}} \\
+						\textbf{\getsupervisor{1}{1}}& &
+						\textbf{\getsupervisor{2}{1}} \\
 						\textbf{\getsupervisor{1}{2}} & & \textbf{\getsupervisor{2}{2}}\\
-					\end{tabular}
+					\end{tabulary}
 				\end{center}
 			\end{singlespacing}
 		\end{center}
@@ -571,16 +571,16 @@
 				
 				\begin{center}
 					%% style1 (original style by Canggih)
-					\begin{tabular}{ccc}
-						\iftoggle{lang}{Pembimbing I}{Supervisor I} &\hspace{2cm} & \iftoggle{lang}{Anggota Dewan Penguji Lain}{Examiners} \\
-						\vspace{0.3cm} & \vspace{0.3cm} & \vspace{0.3cm}\\
-						\textbf{\underline{\getsupervisor{1}{1}}}& &
-						\textbf{\underline{\getexaminer{1}{1}}} \\
-						\iftoggle{lang}{Pembimbing II}{Supervisor II} &\hspace{2cm} &   \\
-						\vspace{0.3cm} & \vspace{0.3cm} & \vspace{0.3cm}\\
-						\textbf{\underline{\getsupervisor{2}{1}}}& &
-						\textbf{\underline{\getexaminer{2}{1}}} \\
-					\end{tabular}
+					% \begin{tabular}{ccc}
+					% 	\iftoggle{lang}{Pembimbing I}{Supervisor I} &\hspace{2cm} & \iftoggle{lang}{Anggota Dewan Penguji Lain}{Examiners} \\
+					% 	\vspace{0.3cm} & \vspace{0.3cm} & \vspace{0.3cm}\\
+					% 	\textbf{\underline{\getsupervisor{1}{1}}}& &
+					% 	\textbf{\underline{\getexaminer{1}{1}}} \\
+					% 	\iftoggle{lang}{Pembimbing II}{Supervisor II} &\hspace{2cm} &   \\
+					% 	\vspace{0.3cm} & \vspace{0.3cm} & \vspace{0.3cm}\\
+					% 	\textbf{\underline{\getsupervisor{2}{1}}}& &
+					% 	\textbf{\underline{\getexaminer{2}{1}}} \\
+					% \end{tabular}
 
 					%% style2
 					% \begin{tabular*}{\textwidth}{cc}
@@ -604,7 +604,6 @@
 					% 	\textbf{\underline{\getexaminer{2}{1}}} \\
 					% \end{tabularx}
 
-
 					%% style4
 					% \begin{tabular}{c}
 					% 	\iftoggle{lang}{Pembimbing I}{Supervisor I}\\
@@ -615,7 +614,19 @@
 					% 	\textbf{\underline{\getsupervisor{2}{1}}}\\
 					% \end{tabular}
 
-					% TODO: use tabulary
+					% style5, tabulary
+					\begin{tabulary}{\linewidth}{CcC}
+						\iftoggle{lang}{Pembimbing I}{Supervisor I} &\hspace{2cm} & \iftoggle{lang}{Anggota Dewan Penguji Lain}{Examiners} \\
+						\vspace{0.3cm} & \vspace{0.3cm} & \vspace{0.3cm}\\
+						\textbf{\getsupervisor{1}{1}}& &
+						\textbf{\getexaminer{1}{1}} \\
+						\iftoggle{lang}{Pembimbing II}{Supervisor II} &\hspace{2cm} &   \\
+						\vspace{0.3cm} & \vspace{0.3cm} & \vspace{0.3cm}\\
+						\textbf{\getsupervisor{2}{1}}& &
+						\textbf{\getexaminer{2}{1}} \\
+					\end{tabulary}
+
+				% TODO: use tabulary
 				\end{center}
 				\vspace{0.5cm}
 				
