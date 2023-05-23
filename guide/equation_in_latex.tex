@@ -1,0 +1,149 @@
+\documentclass{beamer}
+
+\usepackage{hyperref}
+\usetheme{metropolis}
+
+\title{Guide for \texttt{thesisdtetiugm} Class File}
+\subtitle{Equations in LaTeX}
+
+\author{Muhammad Yasirroni}
+\institute{Universitas Gadjah Mada}
+\date{\today}
+
+% NOTE: [fragile] required for \verb|...| and \begin{verbatim}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Introduction}
+\begin{frame}
+  \frametitle{What is LaTeX?}
+  \begin{itemize}
+    \item One of the strengths of using LaTeX compared to other editors is its excellent support for writing equations.
+  \end{itemize}
+\end{frame}
+
+\section{Environments}
+\begin{frame}[fragile]
+  \frametitle{Various Environments for Equations}
+  There are several environments in LaTeX that you can use to typeset equations. Here are some commonly used ones:
+
+  \begin{itemize}
+    \item inline equation: You can typeset equations inline within the text by enclosing them in single dollar signs (\$).
+
+    \item \texttt{equation} environment: The \texttt{equation} environment is used for displaying standalone, single equation. It automatically numbers the equations and places them in the center of the line.
+
+    \item \texttt{align} environment: The \texttt{align} environment is used to typeset multiline equations alignment at ampersands (\verb|&|).
+
+    \item \texttt{align*} environment: The \texttt{align*} environment is \texttt{align} environment but does not automatically number the equations.
+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Inline Equation}
+  Inline equation is used when you want to mention equation or variable inside of sentence. For example, this equation of $E=mc^2$ is written using \verb|$E=mc^2$|. 
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\texttt{equation} Environment}
+
+  (\ref{eq:eq1}) called using \verb|\ref{eq:eq1}|.
+
+  \begin{verbatim}
+\begin{equation}
+  \label{eq:eq1}
+    x = 2x + 3
+\end{equation}
+  \end{verbatim}
+
+  \begin{equation}
+    \label{eq:eq1}
+      x = 2x + 3
+  \end{equation}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\texttt{align} Environment}
+
+  (\ref{eq:eq2}\textendash\ref{eq:eq4}) called using \verb|(\ref{eq:eq2}\textendash\ref{eq:eq4})|.
+
+  \begin{verbatim}
+\begin{align}
+  x &= 2x + 3 \label{eq:eq2} \\
+  x - 2x &= 3 \label{eq:eq3} \\
+  x &= 1 \label{eq:eq4}
+\end{align}
+    \end{verbatim}
+
+  \begin{align}
+    x &= 2x + 3 \label{eq:eq2} \\
+    x - 2x &= 3 \label{eq:eq3} \\
+    x &= 1 \label{eq:eq4}
+  \end{align}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\texttt{align*} Environment}
+
+  Just like \texttt{align} but default to no numbering.
+  \begin{verbatim}
+\begin{align*}
+  x &= 2x + 3 \\
+  x - 2x &= 3 \\
+  x &= 1
+\end{align}
+    \end{verbatim}
+
+  \begin{align*}
+    x &= 2x + 3 \\
+    x - 2x &= 3 \\
+    x &= 1
+  \end{align*}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Equation Cotrol and Commands}
+  \begin{itemize}
+    \item \verb|\notag| to not add euqation numbering on current line of \texttt{align} environment. This is the recommended way.
+    \item \verb|\tag{\stepcounter{equation}\theequation}| to add euqation numbering in \texttt{align*} environment.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Example Equation using \texttt{align} environment and \texttt{\textbackslash notag} \#1}
+
+  \begin{verbatim}
+\begin{align}
+  f(x+h)          &= f(x)
+                      + f^\prime(x)h
+                      + \mathcal{O}(h^{2}) \notag \\
+  f^\prime(x)h    &= f(x+h)
+                      - f(x)
+                      + \mathcal{O}(h^{2}) \notag \\
+  f^\prime(x)     &= \frac{f(x+h) - f(x)}{h}
+                      + \mathcal{O}(h)
+\end{align}
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Example Equation using \texttt{align} environment and \texttt{\textbackslash notag} \#2}
+
+\begin{align}
+  f(x+h)          &= f(x)
+                      + f^\prime(x)h
+                      + \mathcal{O}(h^{2}) \notag \\
+  -f^\prime(x)h    &= -f(x+h)
+                      + f(x)
+                      + \mathcal{O}(h^{2}) \notag \\
+  f^\prime(x)     &= \frac{f(x+h) - f(x)}{h}
+                      + \mathcal{O}(h)
+  \end{align}
+\end{frame}
+
+
+\end{document}

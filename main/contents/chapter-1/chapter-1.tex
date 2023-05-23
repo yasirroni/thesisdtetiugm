@@ -7,6 +7,8 @@ Contoh penggunaan sitasi \cite{lukito2016,santosa2011user} \cite{lukito2016,sant
 
 \section{Penulisan Gambar}
 
+Contoh gambar terlihat pada Gambar \ref{Fig: Contoh gambar}. Gambar diambil dari \cite{wibowo2016clustering}.
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=10cm]{images/sample-fig.png}
@@ -14,17 +16,32 @@ Contoh penggunaan sitasi \cite{lukito2016,santosa2011user} \cite{lukito2016,sant
     \label{Fig: Contoh gambar}
 \end{figure}
 
-Contoh gambar terlihat pada Gambar \ref{Fig: Contoh gambar}. Gambar diambil dari \cite{wibowo2016clustering}.
+Contoh gambar terlihat pada Gambar \ref{fig:fig2}, \ref{fig:fig2a}, \ref{fig:fig2b}. Gambar diambil dari \cite{wibowo2016clustering}.
+
+\begin{figure}[h]
+    \centering
+    \subfloat[]{
+            \includegraphics[width=0.45\textwidth]{../main/images/sample-fig.png}  % .. means go up folder
+            \label{fig:fig2a}}
+        % \hspace*{-1.2em}  % this is for giving horizontal space for fig 1 and fig 2.
+    \subfloat[]{
+            \includegraphics[width=0.45\textwidth]{../main/images/sample-fig.png}  % .. means go up folder
+            \label{fig:fig2b}}
+    \caption{(a) Figure 1 example and (b) Figure 2 example.}
+    \label{fig:fig2}
+\end{figure}
 
 \section{Penulisan Tabel}
+
+Contoh penulisan tabel bisa dilihat pada Tabel \ref{Tab: Tabel Tinggi Berat}.
 \begin{table}[h]
     \caption{tabel ini}
-    \vspace{0.5em}
     \centering
-    \begin{tabular}{|l|r|r|}
+    \vspace{0em}  % adjust caption and table space as you like, default to no extra space
+    \begin{tabular}{lrr}
         \hline
         ID & Tinggi Badan (cm) & Berat Badan (kg) \\
-        \hline \hline
+        \hline
         A23 & 173 & 62 \\
         A25 & 185 & 78 \\
         A10 & 162 & 70 \\ \hline
@@ -32,29 +49,29 @@ Contoh gambar terlihat pada Gambar \ref{Fig: Contoh gambar}. Gambar diambil dari
     \label{Tab: Tabel Tinggi Berat}
 \end{table}
 
-Contoh penulisan tabel bisa dilihat pada Tabel \ref{Tab: Tabel Tinggi Berat}.
+Contoh penulisan tabel dengan nama kolom sangat panjang dengan bantuan \textit{tabulary} bisa dilihat pada Tabel \ref{Tab: Tabel Tinggi Berat Kolom Panjang}.
 
 \begin{table}[h]
     \caption{tabel ini}
-    \vspace{0.5em}
     \centering
-    \begin{tabulary}{\linewidth}{|l|C|C|}
+    \vspace{0em}  % adjust caption and table space as you like, default to no extra space
+    \begin{tabulary}{\linewidth}{lCC}
         \hline
         ID & Tinggi Badan Mahasiswa di Universitas Gadjah Mada (cm) & Berat Badan Mahasiswa di Universitas Gadjah Mada(kg) \\
-        \hline \hline
-        A23 &  \multicolumn{1}{r|}{173} &  \multicolumn{1}{r|}{62} \\
-        A25 &  \multicolumn{1}{r|}{185} &  \multicolumn{1}{r|}{78} \\
-        A10 &  \multicolumn{1}{r|}{162} &  \multicolumn{1}{r|}{70} \\ \hline
+        \hline
+        A23 &  \multicolumn{1}{r}{173} &  \multicolumn{1}{r}{62} \\
+        A25 &  \multicolumn{1}{r}{185} &  \multicolumn{1}{r}{78} \\
+        A10 &  \multicolumn{1}{r}{162} &  \multicolumn{1}{r}{70} \\ \hline
     \end{tabulary}
     \label{Tab: Tabel Tinggi Berat Kolom Panjang}
 \end{table}
 
-Contoh penulisan tabel dengan nama kolom sangat panjang dengan bantuan \textit{tabulary} bisa dilihat pada Tabel \ref{Tab: Tabel Tinggi Berat Kolom Panjang}.
+Contoh penulisan tabel dengan gaya yang bersih bisa dilihat pada Tabel \ref{tab: Tabel Tinggi Berat Kolom Panjang Bersih}.
 
 \begin{table}[h]
   \centering
   \caption{Tabel Tinggi Berat 2}
-  \vspace{0em}  % adjust caption and table space
+  \vspace{0em}  % adjust caption and table space as you like, default to no extra space
   \begin{tabulary}{\textwidth}{lRRRR}  % no vertical line if not needed
     \toprule
     & \multicolumn{2}{c}{Laki-laki} & \multicolumn{2}{c}{Perempuan} \\
@@ -68,10 +85,8 @@ Contoh penulisan tabel dengan nama kolom sangat panjang dengan bantuan \textit{t
     Total & 520 & 210 & 520 & 210 \\
     \bottomrule
   \end{tabulary}
-  \label{tab:tinggiberat2}
+  \label{tab: Tabel Tinggi Berat Kolom Panjang Bersih}
 \end{table}
-
-Contoh penulisan tabel dengan gaya yang bersih bisa dilihat pada Tabel \ref{tab:tinggiberat2}.
 
 \section{Penulisan formula}
 Contoh penulisan formula
